@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RorTest</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Любимые мультфильмы Саши</title>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <header>
+      <h1>Любимые мультфильмы Саши</h1>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
+
+
 </html>
