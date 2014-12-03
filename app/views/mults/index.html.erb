@@ -1,0 +1,11 @@
+<h1>Список мультфильмов</h1>
+
+<ul>
+
+<% @mults.each do |mult| %>
+
+    <li><%= mult.name %>&nbsp;<a target="_blank" href="<%= mult.url %>">url</a></li>
+
+<% end %>
+
+</ul>

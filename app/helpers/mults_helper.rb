@@ -1,0 +1,2 @@
+module MultsHelper
+end
