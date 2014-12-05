@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe MultsController, :type => :controller do
+RSpec.describe "mult/index.html.erb", :type => :view do
   pending "add some examples to (or delete) #{__FILE__}"
 end

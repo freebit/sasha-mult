@@ -1,0 +1,38 @@
+@import "normalize.css";
+/*-- @params: preserve-3d, flat --*/
+body {
+  -webkit-transition: -webkit-filter .4s ease, background-color .4s ease, filter .4s ease, background-color .4s ease;
+  transition: filter .4s ease, background-color .4s ease;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.state--hidden {
+  display: none !important;
+}
+.no--transition {
+  -webkit-transition: none !important;
+          transition: none !important;
+}
+.cursor--move {
+  cursor: move;
+}
+.float--right {
+  float: right;
+}
+.float--left {
+  float: right;
+}
+.background--none {
+  background: none !important;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightgray;
+}
+header {
+  height: 130px;
+  background-color: #0b97c4;
+  overflow: hidden;
+}

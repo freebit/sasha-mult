@@ -162,6 +162,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   commands
+  execjs
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails

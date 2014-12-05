@@ -19,6 +19,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'less-rails', '~>2.6.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'execjs'
 gem 'therubyracer',  platforms: :ruby
 
 # Use Uglifier as compressor for JavaScript assets
