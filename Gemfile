@@ -11,6 +11,7 @@ gem 'settingslogic'
 # Use postgresql as the database for ActiveRecord
 gem 'pg'
 gem 'pg_array_parser'
+gem 'bcrypt-ruby'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -51,6 +52,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem "rspec-rails"#, ">= 2.11.0"
   gem 'rb-inotify', '~> 0.9', :require => false
+  gem 'guard-rspec'
 end
 
 # Use ActiveModel has_secure_password

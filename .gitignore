@@ -26,4 +26,4 @@ doc/
 .secret
 
 /frontend/node_modules
-/frontend/bower_components
+/frontend/app/bower_components

@@ -8,3 +8,4 @@ SearchComponent = require './components/search'
 container = document.getElementById 'search'
 if container
   component = React.renderComponent(`<SearchComponent title="My custom prop" />`, container)
+

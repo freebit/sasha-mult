@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'mults/index'
 
   get 'mults/search'
 
-  get 'mult/index'
-
-  get 'mult/search'
-
   root 'mults#index'
 
-  get '/search', to: 'mults#search'
+  match '/signup', to: 'users#new', via: 'get'
+
+
+  #get '/search', to: 'mults#search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

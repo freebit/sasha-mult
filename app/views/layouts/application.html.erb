@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>RorTest</title>
+  <title><%= full_title( yield :title ) %></title>
   <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
@@ -16,6 +16,11 @@
     <li><%= link_to 'Все мультфильмы', '/' %></li>
     <li><%= link_to 'Найти и добавить', controller:"mults", action:"search" %></li>
   </ul>
+  <div class="login">
+    <%= link_to 'Войти', signin_path %>
+    <%= link_to 'Регистрация', signup_path %>
+  </div>
+
 </header>
 
 <%= yield %>
