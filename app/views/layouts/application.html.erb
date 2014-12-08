@@ -17,7 +17,7 @@
     <li><%= link_to 'Найти и добавить', controller:"mults", action:"search" %></li>
   </ul>
   <div class="login">
-    <%= link_to 'Войти', signin_path %>
+    <%= link_to 'Войти', '/' %>
     <%= link_to 'Регистрация', signup_path %>
   </div>
 
@@ -27,5 +27,7 @@
 
 <%= javascript_include_tag 'vendor', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'client', 'data-turbolinks-track' => true %>
+
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

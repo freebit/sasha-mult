@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/new'
+
+  resources :users
+  
 
   get 'mults/index'
-
   get 'mults/search'
 
   root 'mults#index'

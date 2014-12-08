@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User do
 
-  let(:user) { User.new(name: "Test user", email: "user@example.com",password:"foobar",password_confirmation:"foobar") }
+  let(:user) { FactoryGirl.create(:user) }
 
   it "should be valid" do
     expect(user).to be_valid
