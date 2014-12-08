@@ -51,6 +51,7 @@ gem 'spring', group: :development
 group :development, :test do
   gem 'factory_girl_rails'
   gem "rspec-rails"#, ">= 2.11.0"
+  gem 'capybara'
   gem 'rb-inotify', '~> 0.9', :require => false
   gem 'guard-rspec'
 end
