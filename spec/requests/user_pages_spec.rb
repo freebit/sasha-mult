@@ -13,7 +13,7 @@ RSpec.describe "UserPages", :type => :request do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Зарегистрироваться" }
 
     describe "Не валидное заполнение" do
       it "не должен создаваться пользователь" do
