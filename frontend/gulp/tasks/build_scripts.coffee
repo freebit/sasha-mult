@@ -17,6 +17,7 @@ gulp.task 'vendorScripts', ['clean'], ->
     basedir: vendorConfig.baseDir
   })
     .require './jquery/dist/jquery', { expose: 'jquery' }
+    #.require './jquery-ujs/src/rails', { expose: 'jquery-ujs' }
     .require './react/react-with-addons', { expose: 'react' }
 
   bundle = ->
@@ -42,6 +43,7 @@ gulp.task 'clientScripts', ['clean'], ->
     entries: clientConfig.entries,
     extensions: clientConfig.extensions
   }).external 'jquery'
+    #.external 'jquery-ujs'
     .external 'react'
 
   bundle = ->

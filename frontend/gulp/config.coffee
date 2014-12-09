@@ -5,12 +5,12 @@ module.exports = {
   build: {
     vendor: {
       baseDir: './app/bower_components'
-      dest: dest + '/javascripts'
+      dest: dest + '/js'
       outputName: 'vendor.js'
     }
     client: {
       entries: src + '/scripts/main.coffee'
-      dest: dest + '/javascripts'
+      dest: dest + '/js'
       outputName: 'client.js'
       extensions: ['.coffee', '.jsx.coffee']
     }
@@ -20,7 +20,7 @@ module.exports = {
     baseDir: src
     extensions: ['.coffee', '.jsx.coffee']
     entries: './scripts/main.coffee'
-    dest: dest + '/javascripts/'
+    dest: dest + '/js/'
     outputName: 'bundle.js'
   }
 
@@ -60,7 +60,7 @@ module.exports = {
 
   clean: {
     dest: [
-      dest + '/javascripts',
+      dest + '/js',
       dest + '/stylesheets'
     ]
   }

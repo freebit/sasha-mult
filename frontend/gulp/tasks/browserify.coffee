@@ -20,6 +20,7 @@ gulp.task 'browserify', ['clean'], ->
     extensions: config.extensions
   })
     .require './bower_components/jquery/dist/jquery', { expose: 'jquery' }
+    #.require './bower_components/jquery-ujs/src/rails', {expose: 'jquery-ujs'}
     .require './bower_components/react/react-with-addons', { expose: 'react' }
 
   bundle = ->

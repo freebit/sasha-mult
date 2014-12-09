@@ -1,6 +1,7 @@
 ###* @jsx React.DOM ###
 
 $              = require 'jquery'
+#jus            = require 'jquery-ujs'
 React          = require 'react'
 window.React   = React # Expose for React chrome extension
 SearchComponent = require './components/search'
