@@ -17,8 +17,12 @@
     <li><%= link_to 'Найти и добавить', controller:"mults", action:"search" %></li>
   </ul>
   <div class="login">
-    <%= link_to 'Войти', '/' %>
-    <%= link_to 'Регистрация', signup_path %>
+    <% if signed_in? %>
+        <span><%= link_to 'Выйти', signout_path, method: "delete" %></span>
+    <% else %>
+        <span><%= link_to 'Войти', signin_path %></span>
+    <% end %>
+    <span><%= link_to 'Регистрация', signup_path %></span>
   </div>
 
 </header>
@@ -31,7 +35,7 @@
 
 </div>
 
-
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'vendor', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'client', 'data-turbolinks-track' => true %>
 

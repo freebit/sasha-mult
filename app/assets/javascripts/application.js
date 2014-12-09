@@ -1,3 +1,2 @@
-/**
- * Created by freebit on 09/12/14.
- */
+//= require jquery
+//= require jquery_ujs

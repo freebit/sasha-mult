@@ -8,9 +8,14 @@ RSpec.describe User do
     expect(user).to be_valid
   end
 
+  it 'should respond to remember_token' do
+    expect(user).to respond_to(:remember_token)
+  end
+
   it "should respond to password" do
     expect(user).to respond_to(:password)
   end
+
   it "should respond to password_confirmation" do
     expect(user).to respond_to(:password_confirmation)
   end

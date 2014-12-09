@@ -1,0 +1,19 @@
+<% provide :title, 'Вход на сайт' %>
+
+<h1>Авторизация</h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.submit "Войти" %>
+    </div>
+<% end %>
+
+<p>В первые на нашем сайте? <%= link_to "Зарегистрироваться!", signup_path %></p>
