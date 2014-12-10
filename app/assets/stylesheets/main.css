@@ -408,6 +408,15 @@ header .login {
   bottom: 10px;
   right: 20px;
 }
+.alert {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #dda0dd;
+  color: #fff;
+}
+.alert.alert-error {
+  background-color: red;
+}
 form {
   margin-left: 20px;
 }
@@ -435,12 +444,6 @@ form .field input[type=submit] {
   margin-top: 10px;
   background-color: #0b97c4;
   color: #f1f1f1;
-}
-form #error_explanation .alert-error {
-  box-sizing: border-box;
-  padding: 10px;
-  background-color: orangered;
-  color: #fff;
 }
 form #error_explanation ul {
   margin: 20px 0;

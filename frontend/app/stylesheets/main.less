@@ -36,6 +36,17 @@ header{
   }
 }
 
+.alert{
+  .box-sizing(border-box);
+  padding: 10px;
+  background-color: #dda0dd;
+  color: #fff;
+
+  &.alert-error{
+    background-color: red;
+  }
+}
+
 form{
 
   margin-left: 20px;
@@ -72,12 +83,6 @@ form{
   }
 
   #error_explanation{
-    .alert-error{
-      .box-sizing(border-box);
-      padding: 10px;
-      background-color: orangered;
-      color:#fff;
-    }
 
     ul{
       margin: 20px 0;
