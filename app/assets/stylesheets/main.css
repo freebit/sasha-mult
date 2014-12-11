@@ -391,6 +391,13 @@ header {
   background-color: #0b97c4;
   overflow: hidden;
 }
+header h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+header h1 a:hover {
+  text-decoration: underline;
+}
 header .main_menu {
   position: relative;
   margin: 0;
@@ -451,6 +458,41 @@ form #error_explanation ul {
 }
 form #error_explanation ul li {
   font-size: 14px;
+}
+#search ul {
+  list-style: none;
+}
+#search li {
+  position: relative;
+  width: 550px;
+  height: 350px;
+  margin-bottom: 10px;
+}
+#search li p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+#search li button {
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  top: 130px;
+  right: 0;
+  font-size: 90px;
+  text-decoration: none;
+  color: green;
+  border: 3px solid transparent;
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 92px;
+  cursor: pointer;
+}
+#search li button:hover {
+  border-color: green;
+  -webkit-transition: border-color 0.5s ease 0s;
+  transition: border-color 0.5s ease 0s;
 }
 .debug_dump {
   box-sizing: border-box;

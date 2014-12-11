@@ -9,7 +9,7 @@ rename       = require 'gulp-rename'
 handleErrors = require '../util/handleErrors'
 config       = require('../config').less
 
-gulp.task 'less', ['clean'], ->
+gulp.task 'less', ->
   gulp.src config.src
     .pipe less()
     .on 'error', handleErrors

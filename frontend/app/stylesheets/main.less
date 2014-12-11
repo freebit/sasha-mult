@@ -14,6 +14,16 @@ header{
   background-color: #0b97c4;
   overflow: hidden;
 
+  h1 a{
+    color:inherit;
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+
+    }
+  }
+
   .main_menu{
     position: relative;
     margin:0;
@@ -94,6 +104,50 @@ form{
     }
   }
 
+}
+
+#search{
+
+  ul{
+    list-style: none;
+  }
+  li{
+    position: relative;
+    width:550px;
+    height: 350px;
+    margin-bottom: 10px;
+  }
+
+  li p{
+    margin:5px 0;
+    font-size:13px;
+  }
+
+
+
+  li button{
+    position: absolute;
+    display: block;
+    width:100px;
+    height:100px;
+    top:130px;
+    right:0;
+    font-size: 90px;
+    text-decoration: none;
+    color:green;
+    border:3px solid transparent;
+    background-color: transparent;
+    .border-radius(50%);
+    text-align: center;
+    line-height: 92px;
+    cursor:pointer;
+
+    &:hover{
+      border-color: green;
+
+      .transition(border-color 0.5s ease 0.0s)
+    }
+  }
 }
 
 .debug_dump {

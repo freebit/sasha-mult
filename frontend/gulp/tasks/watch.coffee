@@ -9,6 +9,6 @@
 gulp   = require 'gulp'
 config = require '../config'
 
-gulp.task 'watch', ['setWatch', 'browserSync'], ->
-  gulp.watch 'app/*.html', ['html']
+gulp.task 'watch', ['setWatch'], ->
+  #gulp.watch 'app/*.html', ['html']
   gulp.watch 'app/stylesheets/**/*.less', ['less']

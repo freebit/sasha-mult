@@ -20,7 +20,7 @@ module.exports = {
     baseDir: src
     extensions: ['.coffee', '.jsx.coffee']
     entries: './scripts/main.coffee'
-    dest: dest + '/js/'
+    dest: dest + '/js'
     outputName: 'bundle.js'
   }
 
