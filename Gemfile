@@ -9,7 +9,7 @@ gem 'rake'
 gem 'settingslogic'
 
 # Use postgresql as the database for ActiveRecord
-gem 'pg'
+#gem 'pg'
 gem 'pg_array_parser'
 gem 'bcrypt-ruby'
 
@@ -49,6 +49,7 @@ gem 'spring', group: :development
 
 
 group :development, :test do
+  gem 'pg'
   gem 'factory_girl_rails'
   gem "rspec-rails"#, ">= 2.11.0"
   gem 'capybara'
@@ -68,7 +69,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "rails_12factor", group: :production
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 ruby "2.1.5"
 
