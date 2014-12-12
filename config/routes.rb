@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
 
+  root 'mults#index'
+
   resources :users
   resources :sessions, only:[:new, :create, :destroy]
 
   get 'mults/index'
   get 'mults/search'
 
-  root 'mults#index'
 
   match '/signup', to: 'users#new',         via: 'get'
   match '/signin',  to: 'sessions#new',     via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
+  match '/ajax', to: 'ajax#index',          via: 'post'
 
   #get '/search', to: 'mults#search'
 

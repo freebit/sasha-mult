@@ -11,11 +11,12 @@
 <body>
 
 <header>
-  <h1><%= link_to 'Любимые мультфильмы Саши', '/' %></h1>
+  <h1><%= link_to 'Мои любимые мультфильмы', '/' %></h1>
   <ul class="main_menu">
     <li></li>
     <% if signed_in? %>
-        <li><%= link_to 'Добавить', controller:"mults", action:"search" %></li>
+        <li><%= link_to 'Мои мультфильмы', controller:"mults", action:"index" %></li>
+        <li><%= link_to 'Найти и добавить', controller:"mults", action:"search" %></li>
     <% end %>
   </ul>
   <div class="login">
@@ -40,7 +41,7 @@
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'vendor', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'client', 'data-turbolinks-track' => true %>
-
+<%= javascript_tag "window.AUTH_TOKEN = '#{form_authenticity_token}';" %>
 <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

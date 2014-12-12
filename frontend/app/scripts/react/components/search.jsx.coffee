@@ -8,6 +8,7 @@ ResultsList   = require './results_list'
 
 BUTTON_TITLE = 'Найти'
 GOOGLE_DEV_KEY = 'AI39si6PWrM7-h58AC2wluqpCTXwOs11R1sXIiq8sg0uXAcZTp5j8uCWV-4Q-qd3dw0Hi_RFE5-t6ZGRJgbgM6QT2CR3o5GeJw'
+AJAX_URL = "http://localhost:3000/ajax"
 
 Search = React.createClass
 
@@ -42,7 +43,7 @@ Search = React.createClass
       <SearchButton
           title = { this.state.buttonTitle }
           onClick = { this.handleButtonClick } />
-      <ResultsList list = {this.state.results} />
+      <ResultsList list = {this.state.results} onClick = {this.tapItem}/>
     </div>`
 
   handleFieldChange: (e) ->
@@ -52,15 +53,33 @@ Search = React.createClass
 
   handleButtonClick: ->
     if @state.query isnt ""
-      self = @
+      Search = @
       jQTubeUtil.search(
         this.state.query
         (response) ->
-          console.log response.videos
-          self.setState(results: response.videos)
+          console.log response
+          Search.setState(results: response.videos)
       )
 
+  tapItem: (video, e) ->
+    #console.log video
 
+    $.ajax(
+      type:     "POST"
+      url:      AJAX_URL
+      dataType: "json"
+      data:
+              "type_action":        "add"
+              "video":              video.id
+              "title":              video.title
+              "authenticity_token": window.AUTH_TOKEN
+
+      success:(res) ->
+        alert "success ajax"
+
+      error:  (err) ->
+        alert "error ajax"
+    )
 
 
 module.exports = Search

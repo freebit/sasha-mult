@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209132048) do
+ActiveRecord::Schema.define(version: 20141212111408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "mults", force: true do |t|
-    t.string   "name"
-    t.string   "url"
+    t.string   "title"
+    t.string   "video_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "mults", ["video_id"], name: "index_mults_on_video_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

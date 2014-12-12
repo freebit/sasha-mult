@@ -31,14 +31,16 @@ var ResultsList;
 
 ResultsList = React.createClass({displayName: 'ResultsList',
   propTypes: {
-    list: React.PropTypes.array
+    list: React.PropTypes.array,
+    onClick: React.PropTypes.func
   },
   render: function() {
     var list;
+    ResultsList = this;
     list = this.props.list.map(function(item) {
       var src;
       src = "//www.youtube.com/embed/" + item.videoId + "?rel=0&showinfo=0";
-      return React.DOM.li(null, 
+      return React.DOM.li({onClick:  ResultsList.props.onClick.bind(null, {id:item.videoId, title:item.title}) }, 
         React.DOM.iframe({width: "420", height: "315", src: src, frameborder: "0", allowfullscreen: true}), 
         React.DOM.div(null, " ",  item.title, " "), 
         React.DOM.button(null, "+")
@@ -55,7 +57,7 @@ module.exports = ResultsList;
 },{}],"/Users/freebit/Projects/rails/sasha-mult/frontend/app/scripts/react/components/search.jsx.coffee":[function(require,module,exports){
 
 /** @jsx React.DOM */
-var $, BUTTON_TITLE, GOOGLE_DEV_KEY, ResultsList, Search, SearchButton, SearchField;
+var $, AJAX_URL, BUTTON_TITLE, GOOGLE_DEV_KEY, ResultsList, Search, SearchButton, SearchField;
 
 $ = require('jquery');
 
@@ -70,6 +72,8 @@ ResultsList = require('./results_list');
 BUTTON_TITLE = 'Найти';
 
 GOOGLE_DEV_KEY = 'AI39si6PWrM7-h58AC2wluqpCTXwOs11R1sXIiq8sg0uXAcZTp5j8uCWV-4Q-qd3dw0Hi_RFE5-t6ZGRJgbgM6QT2CR3o5GeJw';
+
+AJAX_URL = "http://localhost:3000/ajax";
 
 Search = React.createClass({displayName: 'Search',
   propTypes: {
@@ -108,7 +112,7 @@ Search = React.createClass({displayName: 'Search',
       SearchButton({
           title:  this.state.buttonTitle, 
           onClick:  this.handleButtonClick}), 
-      ResultsList({list: this.state.results})
+      ResultsList({list: this.state.results, onClick: this.tapItem})
     );
   },
   handleFieldChange: function(e) {
@@ -119,16 +123,34 @@ Search = React.createClass({displayName: 'Search',
     });
   },
   handleButtonClick: function() {
-    var self;
     if (this.state.query !== "") {
-      self = this;
+      Search = this;
       return jQTubeUtil.search(this.state.query, function(response) {
-        console.log(response.videos);
-        return self.setState({
+        console.log(response);
+        return Search.setState({
           results: response.videos
         });
       });
     }
+  },
+  tapItem: function(video, e) {
+    return $.ajax({
+      type: "POST",
+      url: AJAX_URL,
+      dataType: "json",
+      data: {
+        "type_action": "add",
+        "video": video.id,
+        "title": video.title,
+        "authenticity_token": window.AUTH_TOKEN
+      },
+      success: function(res) {
+        return alert("success ajax");
+      },
+      error: function(err) {
+        return alert("error ajax");
+      }
+    });
   }
 });
 
@@ -144,7 +166,7 @@ var SearchButton;
 SearchButton = React.createClass({displayName: 'SearchButton',
   propTypes: {
     title: React.PropTypes.string,
-    onClick: React.PropTypes.string
+    onClick: React.PropTypes.func
   },
   render: function() {
     return React.DOM.button({onClick:  this.props.onClick},  this.props.title);

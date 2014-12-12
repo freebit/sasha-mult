@@ -4,11 +4,14 @@ class MultsController < ApplicationController
   #before_action :correct_user
 
   def index
-    @mults = Mult.all
+    @mults = Mult.where(user:current_user).order(created_at: :desc)
+
   end
 
   def search
+
   end
+
 
 
   private
