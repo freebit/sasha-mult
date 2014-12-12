@@ -4,7 +4,7 @@ class MultsController < ApplicationController
   #before_action :correct_user
 
   def index
-    @mults = Mult.where(user:current_user).order(created_at: :desc)
+    @mults = Mult.where(user_id:current_user.id).order(created_at: :desc)
 
   end
 
