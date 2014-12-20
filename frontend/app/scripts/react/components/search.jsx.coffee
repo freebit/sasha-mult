@@ -8,7 +8,7 @@ ResultsList   = require './results_list'
 
 BUTTON_TITLE = 'Найти'
 GOOGLE_DEV_KEY = 'AI39si6PWrM7-h58AC2wluqpCTXwOs11R1sXIiq8sg0uXAcZTp5j8uCWV-4Q-qd3dw0Hi_RFE5-t6ZGRJgbgM6QT2CR3o5GeJw'
-AJAX_URL = "http://localhost:3000/ajax"
+AJAX_URL = "http://sasha-mults.herokuapp.com/ajax"
 
 Search = React.createClass
 
