@@ -5,7 +5,7 @@ class MultsController < ApplicationController
 
   def index
     @mults = Mult.where(user: current_user).order(created_at: :desc)
-
+    #binding.pry
   end
 
   def search

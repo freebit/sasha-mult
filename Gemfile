@@ -9,7 +9,7 @@ gem 'rake'
 gem 'settingslogic'
 
 # Use postgresql as the database for ActiveRecord
-#gem 'pg'
+gem 'pg'
 gem 'pg_array_parser'
 gem 'bcrypt-ruby'
 
@@ -49,12 +49,12 @@ gem 'spring', group: :development
 
 
 group :development, :test do
-  gem 'pg'
   gem 'factory_girl_rails'
   gem "rspec-rails"#, ">= 2.11.0"
   gem 'capybara'
   gem 'rb-inotify', '~> 0.9', :require => false
   gem 'guard-rspec'
+  gem 'pry-rails'
 end
 
 # Use ActiveModel has_secure_password
@@ -70,7 +70,6 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

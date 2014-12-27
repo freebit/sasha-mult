@@ -6,9 +6,10 @@
         <ul class="mults-list">
             <% @mults.each do |mult| %>
 
-              <li>
+              <li id="<%= mult.video_id %>">
                 <iframe width="420" height="315" src="//www.youtube.com/embed/<%= mult.video_id %>?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
                 <p><%= mult.title %></p>
+                <button>-</button>
               </li>
 
             <% end %>
@@ -18,7 +19,7 @@
 <% else %>
 
       <div class="welcome-message">
-        Для того, что бы пополнить коллекцию мультфильмов, нужно авторизоваться и перейти на страницу поиска.
+        Для того, что бы пополнить коллекцию мультфильмов, нужно <%= link_to 'авторизоваться', signin_path %> и перейти на страницу поиска.
       </div>
 
 <% end %>

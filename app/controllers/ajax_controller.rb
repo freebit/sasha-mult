@@ -8,6 +8,9 @@ class AjaxController < ApplicationController
       when "add"
         message = add_video params[:video], params[:title]
 
+      when "delete"
+        message = delete_video params[:video]
+
       else
         message = "unknown action"
 
